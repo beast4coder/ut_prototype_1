@@ -1,0 +1,1 @@
+DISCLAIMER TO COURSEWORK REVIEW: As far as this project goes being a coursework prototype, since the commit "binding of undertale lol" it has been changed for fun. The last commit where it was still a prototype to my coursework was the most recent prior to "binding of undertale lol"
