@@ -98,7 +98,7 @@ fn movement(
     time: Res<Time>,
 ) {
     //loops over all entities that match query and gets mutable access to tranform component
-    for (mut tranform, mut player) in &mut characters {
+    for (mut tranSform, mut player) in &mut characters {
         player.direction = Vec2::new(0.0, 0.0);
         let mut x = 0.0;
         let mut y = 0.0;
@@ -121,22 +121,22 @@ fn movement(
         }
 
         //kill velocity if next to window edge
-        if tranform.translation.x < ((-(WINDOW_WIDTH-PLAYER_X_SIZE))/2.0) && x < 0.0 {
+        if tranSform.translation.x < ((-(WINDOW_WIDTH-PLAYER_X_SIZE))/2.0) && x < 0.0 {
             x = 0.0;
         }
-        if tranform.translation.x > (((WINDOW_WIDTH-PLAYER_X_SIZE))/2.0) && x > 0.0 {
+        if tranSform.translation.x > (((WINDOW_WIDTH-PLAYER_X_SIZE))/2.0) && x > 0.0 {
             x = 0.0;
         }
-        if tranform.translation.y < ((-(WINDOW_HEIGHT-PLAYER_Y_SIZE))/2.0) && y < 0.0 {
+        if tranSform.translation.y < ((-(WINDOW_HEIGHT-PLAYER_Y_SIZE))/2.0) && y < 0.0 {
             y = 0.0;
         }
-        if tranform.translation.y > (((WINDOW_HEIGHT-PLAYER_Y_SIZE))/2.0) && y > 0.0 {
+        if tranSform.translation.y > (((WINDOW_HEIGHT-PLAYER_Y_SIZE))/2.0) && y > 0.0 {
             y = 0.0;
         }  
 
-        tranform.translation.x += x;
+        tranSform.translation.x += x;
         player.position.x += x;
-        tranform.translation.y += y;
+        tranSform.translation.y += y;
         player.position.y += y;
     }
 }
